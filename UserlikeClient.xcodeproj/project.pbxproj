@@ -1,0 +1,211 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		639FD9B914472F65009D469A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 639FD9B814472F65009D469A /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		639FD9B514472F65009D469A /* libUserlikeClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUserlikeClient.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		639FD9B814472F65009D469A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		639FD9BC14472F65009D469A /* UserlikeClient-Prefix.pch */ = {isa = PBXFileReference; path = "UserlikeClient-Prefix.pch"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		639FD9B214472F65009D469A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				639FD9B914472F65009D469A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		639FD9AA14472F65009D469A = {
+			isa = PBXGroup;
+			children = (
+				639FD9BA14472F65009D469A /* UserlikeClient */,
+				639FD9B714472F65009D469A /* Frameworks */,
+				639FD9B614472F65009D469A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		639FD9B614472F65009D469A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				639FD9B514472F65009D469A /* libUserlikeClient.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		639FD9B714472F65009D469A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				639FD9B814472F65009D469A /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		639FD9BA14472F65009D469A /* UserlikeClient */ = {
+			isa = PBXGroup;
+			children = (
+				639FD9BB14472F65009D469A /* Supporting Files */,
+			);
+			path = UserlikeClient;
+			sourceTree = "<group>";
+		};
+		639FD9BB14472F65009D469A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				639FD9BC14472F65009D469A /* UserlikeClient-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		639FD9B314472F65009D469A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		639FD9B414472F65009D469A /* UserlikeClient */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 639FD9BF14472F65009D469A /* Build configuration list for PBXNativeTarget "UserlikeClient" */;
+			buildPhases = (
+				639FD9B114472F65009D469A /* Sources */,
+				639FD9B214472F65009D469A /* Frameworks */,
+				639FD9B314472F65009D469A /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UserlikeClient;
+			productName = UserlikeClient;
+			productReference = 639FD9B514472F65009D469A /* libUserlikeClient.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		639FD9AC14472F65009D469A /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 639FD9AF14472F65009D469A /* Build configuration list for PBXProject "UserlikeClient" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 639FD9AA14472F65009D469A;
+			productRefGroup = 639FD9B614472F65009D469A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				639FD9B414472F65009D469A /* UserlikeClient */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		639FD9B114472F65009D469A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		639FD9BD14472F65009D469A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		639FD9BE14472F65009D469A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		639FD9C014472F65009D469A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DSTROOT = /tmp/UserlikeClient.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UserlikeClient/UserlikeClient-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		639FD9C114472F65009D469A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DSTROOT = /tmp/UserlikeClient.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UserlikeClient/UserlikeClient-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		639FD9AF14472F65009D469A /* Build configuration list for PBXProject "UserlikeClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				639FD9BD14472F65009D469A /* Debug */,
+				639FD9BE14472F65009D469A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		639FD9BF14472F65009D469A /* Build configuration list for PBXNativeTarget "UserlikeClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				639FD9C014472F65009D469A /* Debug */,
+				639FD9C114472F65009D469A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 639FD9AC14472F65009D469A /* Project object */;
+}
