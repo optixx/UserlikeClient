@@ -69,7 +69,7 @@
     
 	navigationBar = [[UINavigationBar alloc] initWithFrame: CGRectMake(0.0f, 0.0f, self.view.frame.size.width, NAVIBAR_HEIGHT)];
     navigationBar.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-    UIImage *userlikeLogo = [UIImage imageNamed:@"userlike_logo.png"];
+    UIImage *userlikeLogo = [UIImage imageNamed:@"UserlikeClient.bundle/images/userlike_logo.png"];
     UIImageView *userlikeImageView = [ [ UIImageView alloc ] 
                               initWithFrame:CGRectMake((self.view.frame.size.width - userlikeLogo.size.width)/2 , 0.0, userlikeLogo.size.width, userlikeLogo.size.height) ];
 	//userlikeImageView.autoresizingMask = UIViewAutoresizingFlexibleRightMargin;

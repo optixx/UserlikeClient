@@ -74,39 +74,10 @@
 		639FE25414473553009D469A /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 639FE0A214473551009D469A /* MBProgressHUD.m */; };
 		639FE25F14473553009D469A /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 639FE0B114473551009D469A /* RegexKitLite.m */; };
 		639FE26314473553009D469A /* SocketIO.m in Sources */ = {isa = PBXBuildFile; fileRef = 639FE0B714473551009D469A /* SocketIO.m */; };
-		63A5434F14474722006F6E75 /* blue_button_bkg.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 63A5433F144746F0006F6E75 /* blue_button_bkg.png */; };
-		63A5435014474722006F6E75 /* bubble_blue.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 63A54340144746F0006F6E75 /* bubble_blue.png */; };
-		63A5435114474722006F6E75 /* bubble_green.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 63A54341144746F0006F6E75 /* bubble_green.png */; };
-		63A5435214474722006F6E75 /* bubble_grey.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 63A54342144746F0006F6E75 /* bubble_grey.png */; };
-		63A5435314474722006F6E75 /* button_attention.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 63A54343144746F0006F6E75 /* button_attention.png */; };
-		63A5435414474722006F6E75 /* entry_bar.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 63A54344144746F0006F6E75 /* entry_bar.png */; };
-		63A5435514474722006F6E75 /* entry_text.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 63A54345144746F0006F6E75 /* entry_text.png */; };
-		63A5435614474722006F6E75 /* userlike_logo.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 63A54346144746F0006F6E75 /* userlike_logo.png */; };
 		63AC8751144741CF009918E6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 63AC874F144741CF009918E6 /* InfoPlist.strings */; };
 		63AC8752144741CF009918E6 /* UserlikeClient-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63AC8750144741CF009918E6 /* UserlikeClient-Info.plist */; };
 		63AC8754144741D7009918E6 /* UserlikeClient-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 63AC8753144741D7009918E6 /* UserlikeClient-Prefix.pch */; };
-		63F410D214474076008D0F25 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 63F410D414474076008D0F25 /* Localizable.strings */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		63A5433C1447468F006F6E75 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = Resources;
-			dstSubfolderSpec = 7;
-			files = (
-				63A5434F14474722006F6E75 /* blue_button_bkg.png in CopyFiles */,
-				63A5435014474722006F6E75 /* bubble_blue.png in CopyFiles */,
-				63A5435114474722006F6E75 /* bubble_green.png in CopyFiles */,
-				63A5435214474722006F6E75 /* bubble_grey.png in CopyFiles */,
-				63A5435314474722006F6E75 /* button_attention.png in CopyFiles */,
-				63A5435414474722006F6E75 /* entry_bar.png in CopyFiles */,
-				63A5435514474722006F6E75 /* entry_text.png in CopyFiles */,
-				63A5435614474722006F6E75 /* userlike_logo.png in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		6301AE0F144739D000F77592 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
@@ -203,15 +174,15 @@
 		639FD9D914473474009D469A /* ULLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ULLog.h; sourceTree = "<group>"; };
 		639FD9DA14473474009D469A /* ULLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ULLog.m; sourceTree = "<group>"; };
 		639FD9DB14473474009D469A /* UserlikeChatBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserlikeChatBarViewController.h; sourceTree = "<group>"; };
-		639FD9DC14473474009D469A /* UserlikeChatBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserlikeChatBarViewController.m; sourceTree = "<group>"; };
+		639FD9DC14473474009D469A /* UserlikeChatBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = UserlikeChatBarViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		639FD9DD14473474009D469A /* UserlikeChatController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserlikeChatController.h; sourceTree = "<group>"; };
-		639FD9DE14473474009D469A /* UserlikeChatController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserlikeChatController.m; sourceTree = "<group>"; };
+		639FD9DE14473474009D469A /* UserlikeChatController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = UserlikeChatController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		639FD9DF14473474009D469A /* UserlikeChatMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserlikeChatMessage.h; sourceTree = "<group>"; };
 		639FD9E014473474009D469A /* UserlikeChatMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserlikeChatMessage.m; sourceTree = "<group>"; };
 		639FD9E114473474009D469A /* UserlikeChatTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserlikeChatTableViewController.h; sourceTree = "<group>"; };
 		639FD9E214473474009D469A /* UserlikeChatTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserlikeChatTableViewController.m; sourceTree = "<group>"; };
 		639FD9E314473474009D469A /* UserlikeChatViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserlikeChatViewCell.h; sourceTree = "<group>"; };
-		639FD9E414473474009D469A /* UserlikeChatViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserlikeChatViewCell.m; sourceTree = "<group>"; };
+		639FD9E414473474009D469A /* UserlikeChatViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = UserlikeChatViewCell.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		639FD9E514473474009D469A /* UserlikeLocationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserlikeLocationController.h; sourceTree = "<group>"; };
 		639FD9E614473474009D469A /* UserlikeLocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserlikeLocationController.m; sourceTree = "<group>"; };
 		639FD9E714473474009D469A /* UserlikeSlot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserlikeSlot.h; sourceTree = "<group>"; };
@@ -231,19 +202,9 @@
 		639FE294144735C1009D469A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		639FE296144735C9009D469A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		639FE298144735E1009D469A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		63A5433F144746F0006F6E75 /* blue_button_bkg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blue_button_bkg.png; path = Images/blue_button_bkg.png; sourceTree = SOURCE_ROOT; };
-		63A54340144746F0006F6E75 /* bubble_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bubble_blue.png; path = Images/bubble_blue.png; sourceTree = SOURCE_ROOT; };
-		63A54341144746F0006F6E75 /* bubble_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bubble_green.png; path = Images/bubble_green.png; sourceTree = SOURCE_ROOT; };
-		63A54342144746F0006F6E75 /* bubble_grey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bubble_grey.png; path = Images/bubble_grey.png; sourceTree = SOURCE_ROOT; };
-		63A54343144746F0006F6E75 /* button_attention.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_attention.png; path = Images/button_attention.png; sourceTree = SOURCE_ROOT; };
-		63A54344144746F0006F6E75 /* entry_bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = entry_bar.png; path = Images/entry_bar.png; sourceTree = SOURCE_ROOT; };
-		63A54345144746F0006F6E75 /* entry_text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = entry_text.png; path = Images/entry_text.png; sourceTree = SOURCE_ROOT; };
-		63A54346144746F0006F6E75 /* userlike_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = userlike_logo.png; path = Images/userlike_logo.png; sourceTree = SOURCE_ROOT; };
 		63AC874F144741CF009918E6 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = SOURCE_ROOT; };
 		63AC8750144741CF009918E6 /* UserlikeClient-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "UserlikeClient-Info.plist"; path = "UserlikeClient/UserlikeClient-Info.plist"; sourceTree = SOURCE_ROOT; };
 		63AC8753144741D7009918E6 /* UserlikeClient-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UserlikeClient-Prefix.pch"; path = "UserlikeClient/UserlikeClient-Prefix.pch"; sourceTree = SOURCE_ROOT; };
-		63F410D314474076008D0F25 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		63F410D71447407E008D0F25 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -416,10 +377,8 @@
 		639FD9CD14472FA8009D469A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				63A5433E144746E3006F6E75 /* Images */,
 				63AC874F144741CF009918E6 /* InfoPlist.strings */,
 				63AC8750144741CF009918E6 /* UserlikeClient-Info.plist */,
-				63F410D414474076008D0F25 /* Localizable.strings */,
 				639FD9CE14472FA8009D469A /* Supporting Files */,
 			);
 			name = Resources;
@@ -554,21 +513,6 @@
 			path = "Vendor/socket.IO-objc";
 			sourceTree = SOURCE_ROOT;
 		};
-		63A5433E144746E3006F6E75 /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				63A5433F144746F0006F6E75 /* blue_button_bkg.png */,
-				63A54340144746F0006F6E75 /* bubble_blue.png */,
-				63A54341144746F0006F6E75 /* bubble_green.png */,
-				63A54342144746F0006F6E75 /* bubble_grey.png */,
-				63A54343144746F0006F6E75 /* button_attention.png */,
-				63A54344144746F0006F6E75 /* entry_bar.png */,
-				63A54345144746F0006F6E75 /* entry_text.png */,
-				63A54346144746F0006F6E75 /* userlike_logo.png */,
-			);
-			name = Images;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -608,7 +552,6 @@
 				639FD9C314472FA8009D469A /* Frameworks */,
 				639FD9C414472FA8009D469A /* Resources */,
 				6361F0C6144738930071F3A1 /* Headers */,
-				63A5433C1447468F006F6E75 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -648,7 +591,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63F410D214474076008D0F25 /* Localizable.strings in Resources */,
 				63AC8751144741CF009918E6 /* InfoPlist.strings in Resources */,
 				63AC8752144741CF009918E6 /* UserlikeClient-Info.plist in Resources */,
 			);
@@ -716,18 +658,6 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		63F410D414474076008D0F25 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				63F410D314474076008D0F25 /* en */,
-				63F410D71447407E008D0F25 /* de */,
-			);
-			name = Localizable.strings;
-			sourceTree = SOURCE_ROOT;
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
 		639FD9BD14472F65009D469A /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -762,7 +692,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -790,7 +720,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = YES;
 				DEAD_CODE_STRIPPING = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";

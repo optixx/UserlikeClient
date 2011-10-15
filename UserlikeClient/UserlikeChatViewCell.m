@@ -126,7 +126,7 @@
         
         if(chatMessage.type == UserlikeChatMessageTypeOperatorTerminating) {
             
-            ballon = [[UIImage imageNamed:@"bubble_blue.png"] 
+            ballon = [[UIImage imageNamed:@"UserlikeClient.bundle/images/bubble_blue.png"] 
                       stretchableImageWithLeftCapWidth:24.0 topCapHeight:15.0];
             
             self.bubbleView.frame = CGRectMake(contentRect.size.width - (size.width + 28.0f), 18.0f, size.width + 28.0f, size.height + 20.0f);
@@ -144,7 +144,7 @@
         }
         else {
             
-            ballon = [[UIImage imageNamed:@"bubble_grey.png"] 
+            ballon = [[UIImage imageNamed:@"UserlikeClient.bundle/images/bubble_grey.png"] 
                       stretchableImageWithLeftCapWidth:24.0 topCapHeight:15.0];;
 
             self.bubbleView.frame = CGRectMake(0.0, 18.0f, size.width + 28.0f, size.height + 20.0f);

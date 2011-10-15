@@ -81,12 +81,12 @@
     // Background image
     UIImageView *viewBackground = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.contentView.frame.size.width, self.contentView.frame.size.height)];
     viewBackground.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    viewBackground.image = [UIImage imageNamed:@"entry_bar.png"];
+    viewBackground.image = [UIImage imageNamed:@"UserlikeClient.bundle/images/entry_bar.png"];
     
     // Rounded text field image
     UIImageView *viewRoundedImage = [[UIImageView alloc] initWithFrame:CGRectMake(40.0f - 35.0f, 7.0f, self.contentView.frame.size.width - 115.0f + 35.0f, self.contentView.frame.size.height - 14.0f)];
     viewRoundedImage.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    viewRoundedImage.image = [[UIImage imageNamed:@"entry_text.png"] stretchableImageWithLeftCapWidth:24.0 topCapHeight:15.0];
+    viewRoundedImage.image = [[UIImage imageNamed:@"UserlikeClient.bundle/images/entry_text.png"] stretchableImageWithLeftCapWidth:24.0 topCapHeight:15.0];
     
     // Text entry
     self.textView = [[BCZeroEdgeTextView alloc] initWithFrame:CGRectMake(47.0f - 35.0f, 13.0f, self.contentView.frame.size.width - 130.0f + 35.0f, self.contentView.frame.size.height - 24.0f)];  
@@ -101,7 +101,7 @@
     
     // Create Send Button
     self.sendButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [self.sendButton setBackgroundImage:[UIImage imageNamed:@"blue_button_bkg.png"] 
+    [self.sendButton setBackgroundImage:[UIImage imageNamed:@"UserlikeClient.bundle/images/blue_button_bkg.png"] 
                           forState:UIControlStateNormal];
     [self.sendButton setFrame:CGRectMake(self.contentView.frame.size.width - 70, 6, 66, 28)];
     [self.sendButton setTitle:kSendButtonTitle 
