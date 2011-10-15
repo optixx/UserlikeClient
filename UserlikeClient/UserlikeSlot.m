@@ -68,6 +68,18 @@
     return bundle!=nil;
 }
 
+- (BOOL)checkUserlikeClientBundle
+{
+    NSArray *files = [[NSBundle mainBundle] pathsForResourcesOfType:@"" inDirectory:@"UserlikeClient.bundle"];
+    for (NSString *file in files) {
+        if ([file hasSuffix:@"images"]){
+            return YES;
+        }
+    }
+    return NO;
+}
+
+
 - (id)init
 {
     socketIO = [[SocketIO alloc] initWithDelegate:self];
@@ -80,6 +92,11 @@
 
 - (BOOL)prepareAndCheckConfig
 {
+    if (![self checkUserlikeClientBundle]){
+        ULLog(@"UserlikeClient.bundle is not in Application bundle.");
+        [self.delegate exitWithConfigError:@"UserlikeClient.bundle is not in Application bundle."];
+        return NO;
+    }
     if (![self checkApplicationConfig:kApplicationConfig]){
         ULLog(@"UserlikeApplication.plist is not in Application bundle.");
         [self.delegate exitWithConfigError:@"UserlikeApplication.plist is not in Application bundle."];
