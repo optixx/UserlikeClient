@@ -34,7 +34,7 @@
 @property(nonatomic,copy) NSDictionary  *operator;
 @property(nonatomic,retain) NSMutableDictionary  *applicationConfig;
 @property(nonatomic,retain) NSMutableDictionary  *applicationStorage;
-
+- (BOOL)prepareAndCheckConfig;
 - (void)createNewChatSlot;
 - (void)connectToChatServer;
 - (void)disconnectFromChatServerWithNotification:(BOOL)notify;
@@ -51,6 +51,7 @@
 - (void)receivedChatMessage:(NSString*)bodyText from:(NSString*)operatorName;
 
 @optional
+- (void)exitWithConfigError:(NSString*)errorMessage;
 - (void)connectedToChatServer;
 - (void)disconnectedFromChatServer:(NSString*)errorMessage;
 - (void)chatServerConnectionError:(NSString*)errorMessage;

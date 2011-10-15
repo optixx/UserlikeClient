@@ -14,6 +14,7 @@
 #import "UserlikeChatController.h"
 #import "MBProgressHUD.h"
 #import "UserlikeSlot.h"
+#import "ULLog.h"
 
 @interface UserlikeChatController (Private)
 - (void)createProgressView;
@@ -44,7 +45,9 @@
     
     userlikeSlot = [[UserlikeSlot alloc] init];
     userlikeSlot.delegate = self;
-    [userlikeSlot connectToChatServer];
+    if ([userlikeSlot prepareAndCheckConfig]){
+        [userlikeSlot connectToChatServer];
+    }
     return;
 }   
 
@@ -220,6 +223,7 @@
 
 - (void) alertAndLeave:(NSString*)text
 {
+    ULLog(@"text=%@", text);
     [self hideProgress];
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Userlike" 
                                                     message:text
@@ -286,6 +290,11 @@
     [self reloadMessages];
     [self showLastMessage:YES];
     
+}
+
+- (void)exitWithConfigError:(NSString*)errorMessage
+{
+    [self alertAndLeave:errorMessage];
 }
 
 #pragma mark -

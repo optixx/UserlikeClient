@@ -62,15 +62,36 @@
     [applicationStorage writeToFile:[self applicationStorageFilePath] atomically:YES];
 }
 
+- (BOOL)checkApplicationConfig:(NSString*)fileName
+{
+    NSString *bundle =  [[ NSBundle mainBundle] pathForResource:[fileName stringByDeletingPathExtension] ofType:[fileName pathExtension]];
+    return bundle!=nil;
+}
+
 - (id)init
 {
     socketIO = [[SocketIO alloc] initWithDelegate:self];
-    
+    sendNotifications = NO;
+    locationController = [[UserlikeLocationController alloc] init];
+    locationController.delegate = self;
+	[locationController.locationManager startUpdatingLocation];
+    return self;
+}
+
+- (BOOL)prepareAndCheckConfig
+{
+    if (![self checkApplicationConfig:kApplicationConfig]){
+        ULLog(@"UserlikeApplication.plist is not in Application bundle.");
+        [self.delegate exitWithConfigError:@"UserlikeApplication.plist is not in Application bundle."];
+        return NO;
+    }
     [self transferPlistToDocumentDirectory:kApplicationConfig];
     if ([[NSFileManager defaultManager] fileExistsAtPath:[self applicationConfigFilePath]]) {
 		applicationConfig = [[NSDictionary alloc] initWithContentsOfFile:[self applicationConfigFilePath]];
     } else {
-        ULLog(@"Error opening application config");
+        ULLog(@"UserlikeApplication.plist is not in Document Folder");
+        [self.delegate exitWithConfigError:@"UserlikeApplication.plist is not in Document Folder"];
+        return NO;
     }
     
     if ([[NSFileManager defaultManager] fileExistsAtPath:[self applicationStorageFilePath]]) {
@@ -85,19 +106,12 @@
         [self.applicationStorage setObject:[NSNumber numberWithDouble:0.0f] forKey:@"latitude"];
         [self.applicationStorage setObject:[NSNumber numberWithDouble:0.0f] forKey:@"longitude"];
     }
-    sendNotifications = NO;
-    locationController = [[UserlikeLocationController alloc] init];
-    locationController.delegate = self;
-	[locationController.locationManager startUpdatingLocation];
-    return self;
+    return YES;
 }
-
 
 #pragma mark -
 - (void)viewDidLoad {
-	
-    
-	
+
 }
 
 - (void)locationUpdate:(CLLocation *)location {

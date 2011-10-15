@@ -333,24 +333,18 @@
 		639FD9BA14472F65009D469A /* UserlikeClient */ = {
 			isa = PBXGroup;
 			children = (
-				639FD9D914473474009D469A /* ULLog.h */,
-				639FD9DA14473474009D469A /* ULLog.m */,
-				639FD9DB14473474009D469A /* UserlikeChatBarViewController.h */,
-				639FD9DC14473474009D469A /* UserlikeChatBarViewController.m */,
+				63C15FBD1449AC3100A1D140 /* Supporting Files */,
+				63C15FBC1449AC0500A1D140 /* View Controller */,
+				639FD9E714473474009D469A /* UserlikeSlot.h */,
+				639FD9E814473474009D469A /* UserlikeSlot.m */,
 				639FD9DD14473474009D469A /* UserlikeChatController.h */,
 				639FD9DE14473474009D469A /* UserlikeChatController.m */,
 				639FD9DF14473474009D469A /* UserlikeChatMessage.h */,
 				639FD9E014473474009D469A /* UserlikeChatMessage.m */,
-				639FD9E114473474009D469A /* UserlikeChatTableViewController.h */,
-				639FD9E214473474009D469A /* UserlikeChatTableViewController.m */,
 				639FD9E314473474009D469A /* UserlikeChatViewCell.h */,
 				639FD9E414473474009D469A /* UserlikeChatViewCell.m */,
 				639FD9E514473474009D469A /* UserlikeLocationController.h */,
 				639FD9E614473474009D469A /* UserlikeLocationController.m */,
-				639FD9E714473474009D469A /* UserlikeSlot.h */,
-				639FD9E814473474009D469A /* UserlikeSlot.m */,
-				639FD9E914473474009D469A /* UserlikeVIewController.h */,
-				639FD9EA14473474009D469A /* UserlikeVIewController.m */,
 				639FD9BB14472F65009D469A /* Supporting Files */,
 			);
 			path = UserlikeClient;
@@ -512,6 +506,28 @@
 			name = "socket.IO-objc";
 			path = "Vendor/socket.IO-objc";
 			sourceTree = SOURCE_ROOT;
+		};
+		63C15FBC1449AC0500A1D140 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				639FD9E914473474009D469A /* UserlikeVIewController.h */,
+				639FD9EA14473474009D469A /* UserlikeVIewController.m */,
+				639FD9DB14473474009D469A /* UserlikeChatBarViewController.h */,
+				639FD9DC14473474009D469A /* UserlikeChatBarViewController.m */,
+				639FD9E114473474009D469A /* UserlikeChatTableViewController.h */,
+				639FD9E214473474009D469A /* UserlikeChatTableViewController.m */,
+			);
+			name = "View Controller";
+			sourceTree = "<group>";
+		};
+		63C15FBD1449AC3100A1D140 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				639FD9D914473474009D469A /* ULLog.h */,
+				639FD9DA14473474009D469A /* ULLog.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
