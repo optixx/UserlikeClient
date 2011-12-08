@@ -12,7 +12,7 @@
 #import "ASIS3Request.h"
 #import "SBJson.h"
 #import "UserlikeLocationController.h"
-
+#import "ULLog.h"
 @implementation UserlikeSlot
 
 @synthesize delegate;
@@ -325,13 +325,13 @@
     [packet setObject:[applicationConfig objectForKey:@"app_key"]  forKey:@"app_key"];
     NSURL *url;
     if ([[applicationConfig  objectForKey:@"support_ssl"] boolValue]){
-        url = [NSURL URLWithString:[NSString stringWithFormat:@"https://%@/api/slot/available",  
+        url = [NSURL URLWithString:[NSString stringWithFormat:@"https://%@/api/chat/slot/available",  
                                        [applicationConfig objectForKey:@"domain_api"]]];
     } else {
-        url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/api/slot/available",  
+        url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/api/chat/slot/available",  
                                     [applicationConfig objectForKey:@"domain_api"]]];
     }
-    
+    ULLog(@"Check slot url=%@",url);
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
     //[request setValidatesSecureCertificate:NO];
     [request addRequestHeader:@"Content-Type" value:@"application/json"];
@@ -367,9 +367,11 @@
 - (void)createNewChatSlot
 {
     if ([[applicationConfig  objectForKey:@"support_ssl"] boolValue]){
+        ULLog(@"Connect SSL host=%@", [applicationConfig objectForKey:@"domain_socketio"]);
         [socketIO connectToHost:[applicationConfig objectForKey:@"domain_socketio"] onPort:
          [[applicationConfig  objectForKey:@"socketio_port_ssl"]intValue] withSSL:YES];
     } else {
+        ULLog(@"Connect HTTP host=%@", [applicationConfig objectForKey:@"domain_socketio"]);
         [socketIO connectToHost:[applicationConfig objectForKey:@"domain_socketio"] onPort:
          [[applicationConfig  objectForKey:@"socketio_port_http"]intValue] withSSL:NO];
     }
