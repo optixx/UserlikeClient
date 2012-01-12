@@ -111,6 +111,7 @@
     [_container addSubview:chatBarViewController.view];
     
     [self.view addSubview:_container];
+    
     [self becomeEntryBar];
     [self showLastMessage:NO];
 }
@@ -217,7 +218,7 @@
 - (void) leaveChatView
 {
     [userlikeSlot disconnectFromChatServerWithNotification:NO];
-    [self.parentViewController dismissModalViewControllerAnimated:YES];
+    [self dismissModalViewControllerAnimated:YES];
     [self.delegate chatDidFinish];
 }
 
