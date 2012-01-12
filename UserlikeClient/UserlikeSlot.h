@@ -14,7 +14,6 @@
 @class UserlikeLocationController;;
 @protocol UserlikeLocationControllerDelegate;
 
-@end
 
 @protocol UserlikeSlotDelegate;
 
