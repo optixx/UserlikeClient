@@ -177,7 +177,7 @@
         self.slot = [dict objectForKey:@"slot"];
         if ([self.operator objectForKey:@"name"] != nil) {
             ULLog(@"Got slot");
-            NSString *welcomeMessage = [NSString stringWithFormat:NSLocalizedString(@"You are talking to %@.",@""), [self.operator objectForKey:@"name"]];
+            NSString *welcomeMessage = [NSString stringWithFormat:NSLocalizedString(@"You are talking to\n%@.",@""), [self.operator objectForKey:@"name"]];
             NSString *imageURL = [NSString stringWithFormat:@"http://%@", [self.operator objectForKey:@"url_image_small"]];
             [self.delegate receivedChatSlotWithMessage:welcomeMessage image:imageURL];
         }
@@ -192,7 +192,7 @@
     
                     self.operator = [[[dict objectForKey:@"args"] objectAtIndex:0] objectForKey:@"operator"]; 
                     self.slot = [[[dict objectForKey:@"args"] objectAtIndex:0] objectForKey:@"slot"];
-                    NSString *welcomeMessage = [NSString stringWithFormat:NSLocalizedString(@"You are talking to %@.",@""), [self.operator objectForKey:@"name"]];
+                    NSString *welcomeMessage = [NSString stringWithFormat:NSLocalizedString(@"You are talking to\n%@.",@""), [self.operator objectForKey:@"name"]];
                     NSString *imageURL = [NSString stringWithFormat:@"http://%@", [self.operator objectForKey:@"url_image_small"]];
                     [self.delegate receivedChatSlotWithMessage:welcomeMessage image:imageURL];
                 }
@@ -411,6 +411,7 @@
     [socketIO release];
     [slot release];
     [operator release];
+    [locationController release];
     [applicationStorage release];
     [applicationConfig release];
     [super dealloc];

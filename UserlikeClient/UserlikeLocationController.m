@@ -8,6 +8,7 @@
 
 #import "UserlikeLocationController.h"
 #import <CoreLocation/CoreLocation.h>
+#import "ULLog.h"
 
 @implementation UserlikeLocationController
 
@@ -27,7 +28,7 @@
 	didUpdateToLocation:(CLLocation *)newLocation
 		   fromLocation:(CLLocation *)oldLocation
 {
-	[self.delegate locationUpdate:newLocation];
+    [self.delegate locationUpdate:newLocation];
 }
 
 
