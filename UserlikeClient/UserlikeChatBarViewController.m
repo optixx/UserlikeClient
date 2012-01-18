@@ -8,6 +8,7 @@
 //  Copyright 2010 Picktek LLC. All rights reserved.
 
 #import "UserlikeChatBarViewController.h"
+#import "ULLog.h"
 
 @implementation BCZeroEdgeTextView
 
@@ -31,15 +32,30 @@
 
 
 - (id)init{
-    self = [super init];
+    if (self = [super init]) {      
+    }
     return self;
 }
 
+
+
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
+
+
+/*
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
+    ULLog(@"y=%i",self.contentView.frame.origin.y );
+}
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
+    ULLog(@"y=%i",self.contentView.frame.origin.y );
+    [self.textView resignFirstResponder];
+    
+}
+*/
 
 - (void) loadView
 {
@@ -51,6 +67,7 @@
     contentView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
     contentView.autoresizesSubviews = YES;
     [self.view addSubview:contentView];
+    [self.view setAutoresizesSubviews:YES];
 }
 
 
@@ -92,6 +109,7 @@
     self.textView = [[BCZeroEdgeTextView alloc] initWithFrame:CGRectMake(47.0f - 35.0f, 13.0f, self.contentView.frame.size.width - 130.0f + 35.0f, self.contentView.frame.size.height - 24.0f)];  
     self.textView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.textView.delegate = self;
+    self.textView.autoresizesSubviews = YES;
     
     // Remove Paddings
     self.textView.contentInset = UIEdgeInsetsMake(-11,-8,0,0);    

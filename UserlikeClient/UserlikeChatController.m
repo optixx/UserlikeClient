@@ -62,22 +62,38 @@
     [self hideNetworkActivityIndicator];
     
     self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    // here
+    self.view.autoresizesSubviews = YES;
+    
     self.autoresizesForKeyboard = YES;
     CGRect rect = self.view.frame;
 
     // Initialize container
     _container = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     _container.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+
+    // here
+    _container.autoresizesSubviews = YES;
+
     
     
 	navigationBar = [[UINavigationBar alloc] initWithFrame: CGRectMake(0.0f, 0.0f, self.view.frame.size.width, NAVIBAR_HEIGHT)];
     navigationBar.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    
+    // here
+    navigationBar.autoresizesSubviews = YES;
+
+    
     UIImage *userlikeLogo = [UIImage imageNamed:@"UserlikeClient.bundle/images/userlike_logo.png"];
     UIImageView *userlikeImageView = [ [ UIImageView alloc ] 
                               initWithFrame:CGRectMake((self.view.frame.size.width - userlikeLogo.size.width)/2 , 0.0, userlikeLogo.size.width, userlikeLogo.size.height) ];
 	//userlikeImageView.autoresizingMask = UIViewAutoresizingFlexibleRightMargin;
     userlikeImageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     userlikeImageView.contentMode = UIViewContentModeCenter;
+ 
+    // here
+    userlikeImageView.autoresizesSubviews = YES;
+
     
     [userlikeImageView setImage:userlikeLogo];
     [navigationBar addSubview:userlikeImageView];
@@ -100,6 +116,10 @@
     chatTableViewController = [[UserlikeChatTableViewController alloc] initWithStyle:UITableViewStylePlain];
     chatTableViewController.tableView.frame = CGRectMake(0, NAVIBAR_HEIGHT, rect.size.width, rect.size.height - BAR_HEIGHT - NAVIBAR_HEIGHT);
     //conversationTableViewController.tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+    // here
+    chatTableViewController.tableView.autoresizesSubviews = YES;
+
+    
     chatTableViewController.delegate = self;
     [_container addSubview:chatTableViewController.tableView];
 
@@ -119,6 +139,7 @@
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // Return YES for supported orientations
+    //ULLog(@"");
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 

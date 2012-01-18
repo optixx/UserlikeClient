@@ -58,8 +58,7 @@
 
 - (void)saveApplicationStorage
 {
-	ULLog(@"Save applicationStorage");
-    [applicationStorage writeToFile:[self applicationStorageFilePath] atomically:YES];
+   [applicationStorage writeToFile:[self applicationStorageFilePath] atomically:YES];
 }
 
 - (BOOL)checkApplicationConfig:(NSString*)fileName
@@ -104,7 +103,7 @@
     }
     [self transferPlistToDocumentDirectory:kApplicationConfig];
     if ([[NSFileManager defaultManager] fileExistsAtPath:[self applicationConfigFilePath]]) {
-		applicationConfig = [[NSDictionary alloc] initWithContentsOfFile:[self applicationConfigFilePath]];
+		applicationConfig = [[NSMutableDictionary alloc] initWithContentsOfFile:[self applicationConfigFilePath]];
     } else {
         ULLog(@"UserlikeApplication.plist is not in Document Folder");
         [self.delegate exitWithConfigError:@"UserlikeApplication.plist is not in Document Folder"];
@@ -114,7 +113,6 @@
     if ([[NSFileManager defaultManager] fileExistsAtPath:[self applicationStorageFilePath]]) {
         applicationStorage = [[NSMutableDictionary alloc] initWithContentsOfFile:[self applicationStorageFilePath]];
     } else {
-        ULLog(@"Creating inital Storage");
         applicationStorage = [[NSMutableDictionary alloc] init];
         [self.applicationStorage setObject:@"" forKey:@"uuid"];
         [self.applicationStorage setObject:@"" forKey:@"session"];
@@ -127,12 +125,8 @@
 }
 
 #pragma mark -
-- (void)viewDidLoad {
-
-}
 
 - (void)locationUpdate:(CLLocation *)location {
-    ULLog(@"%@",[location description]);
     [self.applicationStorage setObject:[NSNumber numberWithDouble:location.coordinate.latitude] forKey:@"latitude"];
     [self.applicationStorage setObject:[NSNumber numberWithDouble:location.coordinate.longitude] forKey:@"longitude"];
     [self saveApplicationStorage];
@@ -160,14 +154,12 @@
     if ([dict objectForKey:@"uuid"] != nil) {
         if ([self.applicationStorage objectForKey:@"uuid"] == nil || 
             ![[self.applicationStorage objectForKey:@"uuid"] length]){ 
-            ULLog(@"Set UUID");
             [self.applicationStorage setObject:[dict objectForKey:@"uuid"] forKey:@"uuid"];
             [self saveApplicationStorage];
         }
     }
     // Session
     if ([dict objectForKey:@"session"] != nil) {
-        ULLog(@"Set session");
         [self.applicationStorage setObject:[dict objectForKey:@"session"] forKey:@"session"];
         [self saveApplicationStorage];
     }
@@ -176,7 +168,6 @@
         self.operator = [dict objectForKey:@"operator"];
         self.slot = [dict objectForKey:@"slot"];
         if ([self.operator objectForKey:@"name"] != nil) {
-            ULLog(@"Got slot");
             NSString *welcomeMessage = [NSString stringWithFormat:NSLocalizedString(@"You are talking to\n%@.",@""), [self.operator objectForKey:@"name"]];
             NSString *imageURL = [NSString stringWithFormat:@"http://%@", [self.operator objectForKey:@"url_image_small"]];
             [self.delegate receivedChatSlotWithMessage:welcomeMessage image:imageURL];
@@ -230,7 +221,6 @@
     }
     // Quit
     if ([[dict objectForKey:@"name"] isEqualToString: @"quit"]) {
-        ULLog(@"Handle quit command");
         [self disconnectFromChatServerWithNotification:YES];
     }
 
@@ -261,7 +251,7 @@
 
 - (void) socketIODidConnect:(SocketIO *)socket
 {
-    ULLog(@" >>> socket: %@", socket);
+    //ULLog(@" >>> socket: %@", socket);
     if (sendNotifications && [self.delegate respondsToSelector:@selector(connectedToChatServer)]){
         [self.delegate connectedToChatServer];
     }
@@ -269,7 +259,7 @@
 
 - (void) socketIODidDisconnect:(SocketIO *)socket
 {
-    ULLog(@" >>> socket: %@", socket);
+    //ULLog(@" >>> socket: %@", socket);
     if (sendNotifications && [self.delegate respondsToSelector:@selector(disconnectedFromChatServer:)]){
         [self.delegate disconnectedFromChatServer:NSLocalizedString(@"Connection terminated.",@"")];
     }
@@ -278,25 +268,25 @@
 
 - (void) socketIO:(SocketIO *)socket didReceiveMessage:(SocketIOPacket *)packet
 {
-    ULLog(@" >>> data: %@", packet.data);
+    //ULLog(@" >>> data: %@", packet.data);
     [self handlePacket: [packet dataAsJSON]];
 }
 
 - (void) socketIO:(SocketIO *)socket didReceiveJSON:(SocketIOPacket *)packet
 {
-    ULLog(@" >>> data: %@", packet.data);
+    //ULLog(@" >>> data: %@", packet.data);
     [self handlePacket: [packet dataAsJSON]];
 }
 
 - (void) socketIO:(SocketIO *)socket didReceiveEvent:(SocketIOPacket *)packet
 {
-    ULLog(@" >>> data: %@", packet.data);
+    //ULLog(@" >>> data: %@", packet.data);
     [self handlePacket: [packet dataAsJSON]];
 }
 
 - (void) socketIO:(SocketIO *)socket didSendMessage:(SocketIOPacket *)packet
 {
-    ULLog(@" >>> data: %@", packet.data);
+    //ULLog(@" >>> data: %@", packet.data);
     [self handlePacket: [packet dataAsJSON]];
 }
 
@@ -331,7 +321,7 @@
         url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/api/chat/slot/available",  
                                     [applicationConfig objectForKey:@"domain_api"]]];
     }
-    ULLog(@"Check slot url=%@",url);
+    //ULLog(@"Check slot url=%@",url);
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
     //[request setValidatesSecureCertificate:NO];
     [request addRequestHeader:@"Content-Type" value:@"application/json"];
@@ -348,7 +338,7 @@
             [self.applicationStorage setObject:[response objectForKey:@"ip"] forKey:@"ip"];
             [self saveApplicationStorage];
         }
-        ULLog(@"Response=%@", response);
+        //ULLog(@"Response=%@", response);
         if ([[response objectForKey:@"error"] isEqualToString: @"NO_SLOT"]) {
             [self.delegate chatSlotAvailable:NO with:NSLocalizedString(@"No Operator available.",@"")];
         } else if ([response objectForKey:@"error"] !=nil) {
@@ -357,7 +347,7 @@
             [self createNewChatSlot];
         }
     } else {
-        ULLog(@"HTTP Request Error") ;
+        //ULLog(@"HTTP Request Error") ;
         if ([self.delegate respondsToSelector:@selector(chatServerConnectionError:)]){
             [self.delegate chatServerConnectionError:NSLocalizedString(@"Connection error.",@"")];
         }
@@ -403,7 +393,7 @@
 
 - (void)sendChatMessage:(NSString*)bodyText
 {
-    [socketIO sendEvent:@"message" withData:bodyText andAcknowledge:nil];
+    [socketIO sendEvent:@"message" withData:(NSDictionary*) bodyText andAcknowledge:nil];
 }
 
 

@@ -75,7 +75,6 @@
 		639FE25F14473553009D469A /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 639FE0B114473551009D469A /* RegexKitLite.m */; };
 		639FE26314473553009D469A /* SocketIO.m in Sources */ = {isa = PBXBuildFile; fileRef = 639FE0B714473551009D469A /* SocketIO.m */; };
 		63AC8751144741CF009918E6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 63AC874F144741CF009918E6 /* InfoPlist.strings */; };
-		63AC8752144741CF009918E6 /* UserlikeClient-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63AC8750144741CF009918E6 /* UserlikeClient-Info.plist */; };
 		63AC8754144741D7009918E6 /* UserlikeClient-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 63AC8753144741D7009918E6 /* UserlikeClient-Prefix.pch */; };
 /* End PBXBuildFile section */
 
@@ -583,6 +582,9 @@
 /* Begin PBXProject section */
 		639FD9AC14472F65009D469A /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
 			buildConfigurationList = 639FD9AF14472F65009D469A /* Build configuration list for PBXProject "UserlikeClient" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -608,7 +610,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				63AC8751144741CF009918E6 /* InfoPlist.strings in Resources */,
-				63AC8752144741CF009918E6 /* UserlikeClient-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -726,7 +727,7 @@
 				MACOSX_DEPLOYMENT_TARGET = "";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos5.0;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = framework;
@@ -754,7 +755,7 @@
 				MACH_O_TYPE = mh_object;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos5.0;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = framework;

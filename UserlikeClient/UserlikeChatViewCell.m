@@ -109,7 +109,6 @@
                                lineBreakMode:UILineBreakModeCharacterWrap];
 
     if([chatMessage operatorImage] != nil) {
-        NSLog(@"Have image");
         if(size.height < chatMessage.operatorImage.size.height) {
             size.height = chatMessage.operatorImage.size.height;
         }     

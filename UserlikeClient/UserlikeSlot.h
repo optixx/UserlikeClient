@@ -11,7 +11,7 @@
 
 @class SocketIO;
 @protocol SocketIODelegate;
-@class UserlikeLocationController;;
+@class UserlikeLocationController;
 @protocol UserlikeLocationControllerDelegate;
 
 

@@ -9,6 +9,7 @@
 
 
 #import "UserlikeVIewController.h"
+#import "ULLog.h"
 
 @interface UserlikeVIewController (Private)
 - (void)resizeForKeyboard:(NSNotification*)notification appearing:(BOOL)appearing;
@@ -30,12 +31,24 @@
     [self init];
 }
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+}
+
+
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
     
     // Release any cached data, images, etc that aren't in use.
 }
+
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    ULLog(@"");
+    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+}
+
 
 - (void)dealloc {
     [super dealloc];
@@ -103,7 +116,6 @@
         _autoresizesForKeyboard = autoresizesForKeyboard;
    
         if (_autoresizesForKeyboard) {
-            NSLog(@"Register keyboard notification");
             [[NSNotificationCenter defaultCenter] addObserver:self
                                                      selector:@selector(keyboardWillShow:)
                                                          name:UIKeyboardWillShowNotification
@@ -121,7 +133,6 @@
                                                          name:UIKeyboardDidHideNotification
                                                        object:nil];
         } else {
-            NSLog(@"Remove keyboard notification");
             [[NSNotificationCenter defaultCenter] removeObserver:self
                                                             name:UIKeyboardWillShowNotification
                                                           object:nil];
